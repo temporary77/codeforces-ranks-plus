@@ -1,2 +1,2 @@
-# codeforces-ranks-
+# codeforces-ranks-plus
 additional rank colors
