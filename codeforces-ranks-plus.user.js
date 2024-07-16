@@ -2,7 +2,7 @@
 // @name         Codeforces Ranks+
 // @version      1.0.0
 // @description  more rank colors
-// @author       me
+// @author       temporary1
 // @match        https://codeforces.com/*
 // @match        http://codeforces.com/*
 // @resource     rankcolorscss rankcolors.css
