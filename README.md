@@ -7,5 +7,5 @@ colors are picked to work with [this dark theme](https://github.com/GaurangTando
 
 ## download instructions
 
-1. install [Tampermonkey](https://tampermonkey.net/).
-2. [**click this link**](https://github.com/temporary77/codeforces-ranks-plus/raw/main/codeforces-ranks-plus.user.js) to install the rank colors userscript.
+1. install [Tampermonkey](https://tampermonkey.net/)
+2. [**click this link**](https://github.com/temporary77/codeforces-ranks-plus/raw/main/codeforces-ranks-plus.user.js) to install the rank colors userscript
