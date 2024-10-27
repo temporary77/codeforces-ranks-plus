@@ -1,11 +1,11 @@
 // ==UserScript==
-// @name         Codeforces Ranks+
+// @name         Codeforces Ranks+ (For Dark Themes)
 // @version      1.0.0
 // @description  a handful of rank colors
 // @author       temporary1
 // @match        https://codeforces.com/*
 // @match        http://codeforces.com/*
-// @resource     rankcolorscss rankcolors.css
+// @resource     rankcolorscss darktheme_rankcolors.css
 // @grant        GM_addStyle
 // @grant        GM_getResourceText
 // @run-at       document-start
