@@ -5,7 +5,7 @@
 // @author       temporary1
 // @match        https://codeforces.com/*
 // @match        http://codeforces.com/*
-// @resource     rankcolorscss darktheme_rankcolors.css
+// @resource     rankcolorscss https://raw.githubusercontent.com/temporary77/codeforces-ranks-plus/refs/heads/main/darktheme_rankcolors.css
 // @grant        GM_addStyle
 // @grant        GM_getResourceText
 // @run-at       document-start
@@ -197,4 +197,22 @@
         animateGradient();
         animateGradient4000();
     });
+
+    if (document.readyState === 'complete' || document.readyState === 'interactive') {
+        setTimeout(() => {
+            document.querySelectorAll('.user-orange').forEach(function (elm) {
+                changeOrange(elm);
+                // setTimeout(() => applyClassChanges(elm), 0);
+            });
+            document.querySelectorAll('.user-red').forEach(function (elm) {
+                changeRed(elm);
+                // setTimeout(() => applyClassChanges(elm), 0);
+            });
+
+            observer.observe(document.body, { attributes: true, childList: true, subtree: true });
+
+            animateGradient();
+            animateGradient4000();
+        }, 0);
+    }
 })();
