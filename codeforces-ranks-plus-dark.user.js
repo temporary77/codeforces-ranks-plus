@@ -11,6 +11,7 @@
 // @run-at       document-start
 // ==/UserScript==
 
+// test
 // !!!!! colors are picked to work with https://github.com/GaurangTandon/codeforces-darktheme. change them yourself if you want
 
 (function () {
