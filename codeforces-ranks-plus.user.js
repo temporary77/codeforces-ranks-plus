@@ -1,27 +1,104 @@
 // ==UserScript==
-// @name         Codeforces Ranks+ (For Dark Themes)
+// @name         Codeforces Ranks+
 // @version      1.0.0
 // @description  a handful of rank colors
 // @author       temporary1
 // @match        https://codeforces.com/*
 // @match        http://codeforces.com/*
-// @resource     rankcolorscss https://raw.githubusercontent.com/temporary77/codeforces-ranks-plus/refs/heads/main/darktheme_rankcolors.css
+// @updateURL    https://github.com/temporary77/codeforces-ranks-plus/raw/main/codeforces-ranks-plus.user.js
+// @downloadURL  https://github.com/temporary77/codeforces-ranks-plus/raw/main/codeforces-ranks-plus.user.js
+// @resource     rankcolorsdark https://raw.githubusercontent.com/temporary77/codeforces-ranks-plus/refs/heads/main/rankcolorsdark.css
+// @resource     rankcolorslight https://raw.githubusercontent.com/temporary77/codeforces-ranks-plus/refs/heads/main/rankcolorslight.css
+// @require      https://openuserjs.org/src/libs/sizzle/GM_config.js
+// @grant        GM_getValue
+// @grant        GM_setValue
+// @grant        GM.getValue
+// @grant        GM.setValue
+// @grant        GM_registerMenuCommand
 // @grant        GM_addStyle
 // @grant        GM_getResourceText
 // @run-at       document-start
 // ==/UserScript==
 
-// test
+/* globals $, GM_config */
+
 // !!!!! colors are picked to work with https://github.com/GaurangTandon/codeforces-darktheme. change them yourself if you want
 
 (function () {
     "use strict";
 
-    var rankColorsCSS = GM_getResourceText("rankcolorscss");
-    GM_addStyle(rankColorsCSS);
+    let msPerFrameLGM = GM_getValue('msPerFrameLGM',80); // miliseconds per frame for lgm animation
+    let msPerFrame4000 = GM_getValue('msPerFrame4000',20); // miliseconds per frame for 4000 animation
 
-    const msPerFrameLGM = 80; // miliseconds per frame for lgm animation
-    const msPerFrame4000 = 20; // miliseconds per frame for 4000 animation
+    let gmc = new GM_config(
+        {
+            'id': 'rankscfg',
+            'title': 'Codeforces Ranks+ Config',
+            'fields':
+            {
+                'msPerFrameLGM': { label: 'msPerFrameLGM', section: ['Configurable Options'], type: 'int', default: 80 },
+                'msPerFrame4000': { label: 'msPerFrame4000', type: 'int', default: 20 },
+            },
+            'events':
+            {
+                'open': function () {
+                    let iframe = document.querySelector("#rankscfg");
+                    if (!iframe) {
+                        console.log("couldnt find iframe");
+                        return;
+                    }
+                    let iframeDoc = iframe.contentDocument || iframe.contentWindow.document;
+                    function modiframe(selector, callback) {
+                        let element = iframeDoc.querySelector(selector);
+                        callback(element);
+                    }
+                    modiframe("#rankscfg_header", (elm) => {
+                        let descdiv = document.createElement("div");
+                        descdiv.innerText = `a handful of rank colors`;
+                        descdiv.style.cssText = "font-size: 14px; color: gray; margin-top: 5px; text-align: center";
+                        elm.insertAdjacentElement("afterend", descdiv);
+                    });
+                    function addDesc(selector, desc) {
+                        modiframe(`#rankscfg_${selector}_var`, (elm) => {
+                            let descdiv = document.createElement("div");
+                            descdiv.innerText = desc;
+                            descdiv.style.cssText = "font-size: 12px; color: gray; margin-top: 5px;";
+                            elm.appendChild(descdiv);
+                        });
+                    }
+                    function chain(selector) {
+                        modiframe(`#rankscfg_${selector}_var`, (elm) => {
+                            elm.style.display = "inline-block";
+                            elm.style.marginRight = "15px";
+                        });
+                    }
+                    addDesc("msPerFrameLGM",`miliseconds per frame for lgm animation`);
+                    addDesc("msPerFrame4000",`miliseconds per frame for 4000 animation`);
+                },
+                'save': function () {
+                    function updateConfig(configName) {
+                        const val = gmc.get(configName);
+                        GM_setValue(configName,val)
+                    }
+                    updateConfig('msPerFrameLGM');updateConfig('msPerFrame4000');
+                    location.reload();
+                }
+            }
+        });
+    GM_registerMenuCommand("Open Config", () => gmc.open());
+
+    function isDarkMode() {
+        const bgColor = window.getComputedStyle(document.body).backgroundColor;
+        let lum = parseInt(bgColor.match(/\d+/)[0], 10);
+        if (lum < 128) {
+            return 1;
+        } else {
+            return 0;
+        }
+    } // sentience
+
+    var rankColorsCSS = GM_getResourceText(isDarkMode() ? "rankcolorsdark" : "rankcolorslight");
+    GM_addStyle(rankColorsCSS);
 
     function overrideStyleAttribute(elm, prop, value) {
         // elm.setAttribute("style", elm.getAttribute("style") + `; ${prop}: ${value} !important; `);

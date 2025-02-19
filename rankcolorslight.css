@@ -1,0 +1,52 @@
+/* M */
+tr.user-yellow td,
+span.user-yellow,
+a.user-yellow {
+    color: #ffbc42 !important;
+}
+
+/* IGM */
+tr.user-pink td,
+span.user-pink,
+a.user-pink {
+    color: #ffb2c0 !important;
+}
+
+/* LGM */
+tr.user-legendary td,
+span.user-legendary,
+a.user-legendary {
+    background: linear-gradient(
+        to right,
+        #4dffff, #4dff88, #88ff4d, #ffff4d, #ff884d, #ff4d88, #ff4dff, #884dff, #4d88ff,
+        #4dffff, #4dff88, #88ff4d, #ffff4d, #ff884d, #ff4d88, #ff4dff
+    ) !important;
+    background-size: 250% 100% !important;
+    text-shadow: 0px 0px 4px rgba(255, 255, 255, 0.4) !important;
+    -webkit-background-clip: text !important;
+    -webkit-text-fill-color: transparent !important;
+    -moz-background-clip: text !important;
+    -moz-text-fill-color: transparent !important;
+}
+
+/* 4000 */
+tr.user-4000 td,
+span.user-4000,
+a.user-4000 {
+    background: linear-gradient(
+        to right,
+        #ffffff, #ffffff, #ffffff, #fffea0, #fffea0, #fff18a, #fff18a, #ffe57c, #ffe57c, #ffd76a, #ffd165, #ffd466,
+        #ffd165, #ffd76a, #ffe57c, #ffe57c, #fff18a, #fff18a, #fffea0, #fffea0, #ffffff, #ffffff,
+        #ffffff, #ffffff, #ffffff, #fffea0, #fffea0, #fff18a, #fff18a, #ffe57c, #ffe57c, #ffd76a, #ffd165, #ffd466,
+        #ffd165, #ffd76a, #ffe57c, #ffe57c, #fff18a, #fff18a, #fffea0, #fffea0, #ffffff, #ffffff,
+        #ffffff, #ffffff, #ffffff, #fffea0, #fffea0, #fff18a, #fff18a, #ffe57c, #ffe57c, #ffd76a, #ffd165, #ffd466,
+        #ffd165, #ffd76a, #ffe57c, #ffe57c, #fff18a, #fff18a, #fffea0, #fffea0, #ffffff, #ffffff,
+        #ffffff
+    ) !important;
+    background-size: 150% 100% !important;
+    text-shadow: 0px 0px 4px rgba(255, 206, 102, 0.6) !important;
+    -webkit-background-clip: text !important;
+    -webkit-text-fill-color: transparent !important;
+    -moz-background-clip: text !important;
+    -moz-text-fill-color: transparent !important;
+}
