@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name         Codeforces Ranks+
-// @version      1.0.0
+// @version      1.1.0
 // @description  a handful of rank colors
 // @author       temporary1
 // @match        https://codeforces.com/*
@@ -20,15 +20,17 @@
 // @run-at       document-start
 // ==/UserScript==
 
-/* globals $, GM_config */
+// light time colors are picked to work with default,
+// dark theme colors are picked to work with https://github.com/GaurangTandon/codeforces-darktheme
 
-// !!!!! colors are picked to work with https://github.com/GaurangTandon/codeforces-darktheme. change them yourself if you want
+/* globals $, GM_config */
 
 (function () {
     "use strict";
 
     let msPerFrameLGM = GM_getValue('msPerFrameLGM',80); // miliseconds per frame for lgm animation
     let msPerFrame4000 = GM_getValue('msPerFrame4000',20); // miliseconds per frame for 4000 animation
+    let theme = GM_getValue('theme',1);
 
     let gmc = new GM_config(
         {
@@ -97,8 +99,15 @@
         }
     } // sentience
 
-    var rankColorsCSS = GM_getResourceText(isDarkMode() ? "rankcolorsdark" : "rankcolorslight");
-    GM_addStyle(rankColorsCSS);
+    let isDark = -1;
+
+    function updateCSS() {
+        var cssname = (theme ? "rankcolorsdark" : "rankcolorslight");
+        var rankColorsCSS = GM_getResourceText(cssname);
+        GM_addStyle(rankColorsCSS);
+    }
+
+    updateCSS();
 
     function overrideStyleAttribute(elm, prop, value) {
         // elm.setAttribute("style", elm.getAttribute("style") + `; ${prop}: ${value} !important; `);
@@ -273,6 +282,12 @@
     });
 
     document.addEventListener('DOMContentLoaded', async function() {
+        let isDark = isDarkMode();
+        if (theme != isDark) {
+           GM_setValue('theme',isDark);
+           theme = isDark;
+           updateCSS();
+        }
         document.querySelectorAll('.user-orange').forEach(function (elm) {
             changeOrange(elm);
             // setTimeout(() => applyClassChanges(elm), 0);
@@ -288,6 +303,7 @@
         animateGradient4000();
     });
 
+    /*
     if (document.readyState === 'complete' || document.readyState === 'interactive') {
         setTimeout(() => {
             document.querySelectorAll('.user-orange').forEach(function (elm) {
@@ -304,5 +320,5 @@
             animateGradient();
             animateGradient4000();
         }, 0);
-    }
+    }*/
 })();

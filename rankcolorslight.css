@@ -2,14 +2,14 @@
 tr.user-yellow td,
 span.user-yellow,
 a.user-yellow {
-    color: #ffbc42 !important;
+    color: #f9bb00 !important;
 }
 
 /* IGM */
 tr.user-pink td,
 span.user-pink,
 a.user-pink {
-    color: #ffb2c0 !important;
+    color: #ff99ad !important;
 }
 
 /* LGM */
@@ -18,11 +18,11 @@ span.user-legendary,
 a.user-legendary {
     background: linear-gradient(
         to right,
-        #4dffff, #4dff88, #88ff4d, #ffff4d, #ff884d, #ff4d88, #ff4dff, #884dff, #4d88ff,
-        #4dffff, #4dff88, #88ff4d, #ffff4d, #ff884d, #ff4d88, #ff4dff
+        #00f9f9, #00f953, #53f900, #f9f900, #f95300, #f90053, #f900f9, #5300f9, #0053f9,
+        #00f9f9, #00f953, #53f900, #f9f900, #f95300, #f90053, #f900f9
     ) !important;
     background-size: 250% 100% !important;
-    text-shadow: 0px 0px 4px rgba(255, 255, 255, 0.4) !important;
+    text-shadow: 0px 0px 4px rgba(175, 175, 175, 0.4) !important;
     -webkit-background-clip: text !important;
     -webkit-text-fill-color: transparent !important;
     -moz-background-clip: text !important;
@@ -35,16 +35,16 @@ span.user-4000,
 a.user-4000 {
     background: linear-gradient(
         to right,
-        #ffffff, #ffffff, #ffffff, #fffea0, #fffea0, #fff18a, #fff18a, #ffe57c, #ffe57c, #ffd76a, #ffd165, #ffd466,
-        #ffd165, #ffd76a, #ffe57c, #ffe57c, #fff18a, #fff18a, #fffea0, #fffea0, #ffffff, #ffffff,
-        #ffffff, #ffffff, #ffffff, #fffea0, #fffea0, #fff18a, #fff18a, #ffe57c, #ffe57c, #ffd76a, #ffd165, #ffd466,
-        #ffd165, #ffd76a, #ffe57c, #ffe57c, #fff18a, #fff18a, #fffea0, #fffea0, #ffffff, #ffffff,
-        #ffffff, #ffffff, #ffffff, #fffea0, #fffea0, #fff18a, #fff18a, #ffe57c, #ffe57c, #ffd76a, #ffd165, #ffd466,
-        #ffd165, #ffd76a, #ffe57c, #ffe57c, #fff18a, #fff18a, #fffea0, #fffea0, #ffffff, #ffffff,
-        #ffffff
+        #f7e16a, #f7e16a, #f7e16a, #f3d456, #f3d456, #eec948, #eec948, #ebc235, #ebc235, #e1b62a, #dcae22, #dab023,
+        #dcae22, #e1b62a, #ebc235, #ebc235, #eec948, #eec948, #f3d456, #f3d456, #f7e16a, #f7e16a,
+        #f7e16a, #f7e16a, #f7e16a, #f3d456, #f3d456, #eec948, #eec948, #ebc235, #ebc235, #e1b62a, #dcae22, #dab023,
+        #dcae22, #e1b62a, #ebc235, #ebc235, #eec948, #eec948, #f3d456, #f3d456, #f7e16a, #f7e16a,
+        #f7e16a, #f7e16a, #f7e16a, #f3d456, #f3d456, #eec948, #eec948, #ebc235, #ebc235, #e1b62a, #dcae22, #dab023,
+        #dcae22, #e1b62a, #ebc235, #ebc235, #eec948, #eec948, #f3d456, #f3d456, #f7e16a, #f7e16a,
+        #f7e16a
     ) !important;
     background-size: 150% 100% !important;
-    text-shadow: 0px 0px 4px rgba(255, 206, 102, 0.6) !important;
+    text-shadow: 0px 0px 4px rgba(255, 189, 38, 0.4) !important;
     -webkit-background-clip: text !important;
     -webkit-text-fill-color: transparent !important;
     -moz-background-clip: text !important;
