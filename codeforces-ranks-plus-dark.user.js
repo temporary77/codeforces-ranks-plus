@@ -41,18 +41,24 @@
         elm.setAttribute("style", newStyle);
     }
 
+    function isMasterText(name) {
+        name = name.toLowerCase();
+        if (name.includes("master") && !name.includes("international"))return true;
+        if (name.includes("мастер") && !name.includes("международный"))return true;
+        return false;
+    }
     // check if master
     function isMasterRank(element) {
 
         if (element.hasAttribute('title')) {
-            if (element.title.toLowerCase().includes("master") && !element.title.toLowerCase().includes("international")) {
+            if (isMasterText(element.title)) {
                 return true;
             } else {
                 return false;
             }
         }
         const textContent = element.textContent.trim().toLowerCase();
-        if (textContent.includes('master') && !textContent.includes('international')) {
+        if (isMasterText(textContent)) {
             return true;
         }
         if (textContent.trim() === 'm') {
@@ -66,18 +72,24 @@
         return false;
     }
 
+    function isIGMText(name) {
+        name = name.toLowerCase();
+        if (name.includes("grandmaster") && name.includes("international"))return true;
+        if (name.includes("гроссмейстер") && name.includes("международный"))return true;
+        return false;
+    }
     // check if igm
     function isIGMRank(element) {
 
         if (element.hasAttribute('title')) {
-            if (element.title.toLowerCase().includes("grandmaster") && element.title.toLowerCase().includes("international")) {
+            if (isIGMText(element.title)) {
                 return true;
             } else {
                 return false;
             }
         }
         const textContent = element.textContent.trim().toLowerCase();
-        if (textContent.includes('grandmaster') && textContent.includes('international')) {
+        if (isIGMText(textContent)) {
             return true;
         }
         if (textContent.trim() === "igm") {
