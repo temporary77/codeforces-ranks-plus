@@ -36,7 +36,7 @@ options:
 
 ## preview
 
-some low res previews
+some low res gradient previews
 
 ![light theme](./imgs/previewlight.gif)
 
