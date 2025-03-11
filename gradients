@@ -1,3 +1,5 @@
+        rainbow
+
         #00ffff, #00ff55, #55ff00, #ffff00, #ff5500, #ff0055, #ff00ff, #5500ff, #0055ff,
         #00ffff, #00ff55, #55ff00, #ffff00, #ff5500, #ff0055, #ff00ff
         
@@ -6,6 +8,41 @@
         #00f9f9, #00f953, #53f900, #f9f900, #f95300, #f90053, #f900f9, #5300f9, #0053f9,
         #00f9f9, #00f953, #53f900, #f9f900, #f95300, #f90053, #f900f9
 
+        A, A, A, B, B, C, C, D, D, E, F, G, F, E, D, D, C, C, B, B, A, A
+
+        gold
+
         #fff499, #f9e875, #f4d558, #ecc440, #e0b528, #ddaf23, #dbb023
+
         #fff499, #fff499, #fff499, #f9e875, #f9e875, #f4d558, #f4d558, #ecc440, #ecc440, #e0b528, #ddaf23, #dbb023, #ddaf23, #e0b528, #ecc440, #ecc440, #f4d558, #f4d558, #f9e875, #f9e875, #fff499, #fff499,
-        #f7e16a, #f7e16a, #f7e16a, #f3d456, #f3d456, #eec948, #eec948, #ebc235, #ebc235, #e1b62a, #dcae22, #dab023, #dcae22, #e1b62a, #ebc235, #ebc235, #eec948, #eec948, #f3d456, #f3d456, #f7e16a, #f7e16a,
+
+        #f7e16a, #f7e16a, #f7e16a, #f3d456, #f3d456, #eec948, #eec948, #ebc23e, #ebc23e, #e1b62a, #dcae22, #dab023, #dcae22, #e1b62a, #ebc23e, #ebc23e, #eec948, #eec948, #f3d456, #f3d456, #f7e16a, #f7e16a,
+
+        #f4d950, #f4d950, #f4d950, #f2ce3e, #f2ce3e, #edc131, #edc131, #eab927, #eab927, #e0ad14, #dba70d, #d8a90f, #dba70d, #e0ad14, #eab927, #eab927, #edc131, #edc131, #f2ce3e, #f2ce3e, #f4d950, #f4d950,
+
+        silver
+
+        #ffffff #f3f3f3 #e9e9e9 #e0e0e0 #d6d6d6 #d2d2d2 #d4d4d4 #
+        #ffffff, #ffffff, #ffffff, #f3f3f3, #f3f3f3, #e9e9e9, #e9e9e9, #e0e0e0, #e0e0e0, #d6d6d6, #d2d2d2, #d4d4d4, #d2d2d2, #d6d6d6, #e0e0e0, #e0e0e0, #e9e9e9, #e9e9e9, #f3f3f3, #f3f3f3, #ffffff, #ffffff
+
+        #dadada, #dadada, #dadada, #cecece, #cecece, #c5c5c5, #c5c5c5, #bfbfbf, #bfbfbf, #b2b2b2, #ababab, #acacac, #ababab, #b2b2b2, #bfbfbf, #bfbfbf, #c5c5c5, #c5c5c5, #cecece, #cecece, #dadada, #dadada
+
+        #d1d1d1, #d1d1d1, #d1d1d1, #c8c8c8, #c8c8c8, #bdbdbd, #bdbdbd, #b7b7b7, #b7b7b7, #aaaaaa, #a4a4a4, #a5a5a5, #a4a4a4, #aaaaaa, #b7b7b7, #b7b7b7, #bdbdbd, #bdbdbd, #c8c8c8, #c8c8c8, #d1d1d1, #d1d1d1
+
+        bronze
+
+        #ff9e6d, #ff9e6d, #ff9e6d, #f39261, #f39261, #e98857, #e98857, #e07f4e, #e07f4e, #d67544, #d27140, #d47342, #d27140, #d67544, #e07f4e, #e07f4e, #e98857, #e98857, #f39261, #f39261, #ff9e6d, #ff9e6d
+
+        #ffffff, #ffffff, #ffffff, #ffc0a0, #ffc0a0, #ffb28c, #ffb28c, #ffa87c, #ffa87c, #ff9c6b, #ff9966, #ff9966, #ff9966, #ff9c6b, #ffa87c, #ffa87c, #ffb28c, #ffb28c, #ffc0a0, #ffc0a0, #ffffff, #ffffff,
+
+        #ff9e6d, #ff9e6d, #ff9e6d, #f39261, #f39261, #e98857, #e98857, #e07f4e, #e07f4e, #d67544, #ce6c3b, #c96b3c, #ce6c3b, #d67544, #e07f4e, #e07f4e, #e98857, #e98857, #f39261, #f39261, #ff9e6d, #ff9e6d (refined)
+
+        #ffffff, #ffffff, #ffffff, #ffd1ba, #ffd1ba, #ffc3a5, #ffc3a5, #ffb996, #ffb996, #ffad84, #ffaa7f, #ffaa7f, #ffaa7f, #ffad84, #ffb996, #ffb996, #ffc3a5, #ffc3a5, #ffd1ba, #ffd1ba, #ffffff, #ffffff
+
+        #ffeee5, #ffeee5, #ffeee5, #ffc0a0, #ffc0a0, #ffb08c, #ffb08c, #ffa67c, #ffa67c, #ff9c6b, #ff9966, #ff9966, #ff9966, #ff9c6b, #ffa67c, #ffa67c, #ffb08c, #ffb08c, #ffc0a0, #ffc0a0, #ffeee5, #ffeee5
+
+        used
+
+        #ffe5d8, #ffe5d8, #ffe5d8, #ffd1ba, #ffd1ba, #ffc3a5, #ffc3a5, #ffb996, #ffb996, #ffad84, #ffaa7f, #ffaa7f,
+        #ffaa7f, #ffad84, #ffb996, #ffb996, #ffc3a5, #ffc3a5, #ffd1ba, #ffd1ba, #ffe5d8, #ffe5d8,
+
