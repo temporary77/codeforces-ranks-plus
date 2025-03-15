@@ -1,6 +1,6 @@
 # codeforces-ranks-plus
 
-a handful of rank colors (for ranks M, IGM, LGM, 4000)
+a handful of rank colors
 [**click to install**](https://github.com/temporary77/codeforces-ranks-plus/raw/main/codeforces-ranks-plus.user.js) (requires a userscript manager)
 
 there are default colors and gradients for both light and dark themes.  
@@ -30,7 +30,7 @@ you should be able to access it through your userscript manager menu
 options:
 
 **No Change** - script will not attempt to modify color  
-**Default ...** - ranks that do not have a corresponding preexistent color will have this option. its just colors i picked  
+**Default ...** - ranks that dont have corresponding preexistent colors (M, IGM, LGM) will have this option. its just colors i picked  
 **Custom** - choose your own color  
 **Gradients** - preset gradients that move. you can customize its speed via ms/frame option  
 
