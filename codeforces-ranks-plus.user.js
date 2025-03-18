@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name         Codeforces Ranks+
-// @version      2.0.0
+// @version      1.1.0
 // @description  a handful of rank colors
 // @author       temporary1
 // @match        https://codeforces.com/*
@@ -9,6 +9,8 @@
 // @match        http://mirror.codeforces.com/*
 // @updateURL    https://github.com/temporary77/codeforces-ranks-plus/raw/main/codeforces-ranks-plus.user.js
 // @downloadURL  https://github.com/temporary77/codeforces-ranks-plus/raw/main/codeforces-ranks-plus.user.js
+// @resource     rankcolorsdark https://raw.githubusercontent.com/temporary77/codeforces-ranks-plus/refs/heads/main/rankcolorsdark.css
+// @resource     rankcolorslight https://raw.githubusercontent.com/temporary77/codeforces-ranks-plus/refs/heads/main/rankcolorslight.css
 // @require      https://openuserjs.org/src/libs/sizzle/GM_config.js
 // @grant        GM_getValue
 // @grant        GM_setValue
@@ -572,8 +574,10 @@
         id = setInterval(frame, speed);
     }
 
-    function animate() {
-        // console.log(theme);
+    let animateconfigs = {};
+
+    function animconfiginit() {
+        animateconfigs = {};
         let defaultTheme = (theme ? defaultDark : defaultLight );
         let gradients = (theme ? gradientsDark : gradientsLight );
         for (let x in configs) {
@@ -582,10 +586,19 @@
                 cfg = defaultTheme[x];
             }
             if (cfg.type === "animation") {
-                document.querySelectorAll(`.${x}`).forEach(elm => {
-                    animateGradient(elm, (cfg.speed === -1 ? defaultSpeeds[cfg.animation] : cfg.speed));
-                });
+                animateconfigs[x] = cfg;
             }
+        }
+    }
+
+    animconfiginit();
+
+    function animate(node) {
+        for (let x in animateconfigs) {
+            let cfg = animateconfigs[x];
+            node.querySelectorAll(`.${x}`).forEach(elm => {
+                animateGradient(elm, (cfg.speed === -1 ? defaultSpeeds[cfg.animation] : cfg.speed));
+            });
         }
     }
 
@@ -608,6 +621,7 @@
                     changeRed(childNode);
                     // setTimeout(() => changeRed(childNode), 0);
                 });
+                animate(node);
             }
         });
     }
@@ -641,6 +655,7 @@
            theme = isDark;
            //updateCSS();
            applyChanges();
+           animconfiginit();
         }
         document.querySelectorAll('.user-orange').forEach(function (elm) {
             changeOrange(elm);
@@ -654,7 +669,7 @@
         observer.observe(document.body, { attributes: true, childList: true, subtree: true });
 
         // applyChanges();
-        animate();
+        animate(document);
         // gmc.open();
     });
 
