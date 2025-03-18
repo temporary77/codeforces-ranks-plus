@@ -651,11 +651,11 @@
     document.addEventListener('DOMContentLoaded', async function() {
         let isDark = isDarkMode();
         if (theme != isDark) {
-           GM_setValue('theme',isDark);
-           theme = isDark;
-           //updateCSS();
-           applyChanges();
-           animconfiginit();
+            GM_setValue('theme',isDark);
+            theme = isDark;
+            // updateCSS();
+            applyChanges();
+            animconfiginit();
         }
         document.querySelectorAll('.user-orange').forEach(function (elm) {
             changeOrange(elm);
