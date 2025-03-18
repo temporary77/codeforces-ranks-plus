@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name         Codeforces Ranks+
-// @version      1.1.0
+// @version      2.0.0
 // @description  a handful of rank colors
 // @author       temporary1
 // @match        https://codeforces.com/*
@@ -9,8 +9,6 @@
 // @match        http://mirror.codeforces.com/*
 // @updateURL    https://github.com/temporary77/codeforces-ranks-plus/raw/main/codeforces-ranks-plus.user.js
 // @downloadURL  https://github.com/temporary77/codeforces-ranks-plus/raw/main/codeforces-ranks-plus.user.js
-// @resource     rankcolorsdark https://raw.githubusercontent.com/temporary77/codeforces-ranks-plus/refs/heads/main/rankcolorsdark.css
-// @resource     rankcolorslight https://raw.githubusercontent.com/temporary77/codeforces-ranks-plus/refs/heads/main/rankcolorslight.css
 // @require      https://openuserjs.org/src/libs/sizzle/GM_config.js
 // @grant        GM_getValue
 // @grant        GM_setValue
