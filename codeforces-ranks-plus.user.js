@@ -558,24 +558,24 @@
 
     applyChanges();
 
-    function animateGradient(elm, speed) {
+    function animateGradient(className, speed) {
         let position = 0;
         let id = null;
 
         function frame() {
             position += 1;
             if (position > 100) position = 0;
-            overrideStyleAttribute(elm,"background-position",`${position}% 50%`);
+            document.querySelectorAll(`.${className}`).forEach(elm => {
+                overrideStyleAttribute(elm, "background-position", `${position}% 50%`);
+            });
         }
 
         clearInterval(id);
         id = setInterval(frame, speed);
     }
 
-    let animateconfigs = {};
-
-    function animconfiginit() {
-        animateconfigs = {};
+    function animate() {
+        // console.log(theme);
         let defaultTheme = (theme ? defaultDark : defaultLight );
         let gradients = (theme ? gradientsDark : gradientsLight );
         for (let x in configs) {
@@ -584,19 +584,8 @@
                 cfg = defaultTheme[x];
             }
             if (cfg.type === "animation") {
-                animateconfigs[x] = cfg;
+                animateGradient(x, (cfg.speed === -1 ? defaultSpeeds[cfg.animation] : cfg.speed));
             }
-        }
-    }
-
-    animconfiginit();
-
-    function animate(node) {
-        for (let x in animateconfigs) {
-            let cfg = animateconfigs[x];
-            node.querySelectorAll(`.${x}`).forEach(elm => {
-                animateGradient(elm, (cfg.speed === -1 ? defaultSpeeds[cfg.animation] : cfg.speed));
-            });
         }
     }
 
@@ -619,7 +608,6 @@
                     changeRed(childNode);
                     // setTimeout(() => changeRed(childNode), 0);
                 });
-                animate(node);
             }
         });
     }
@@ -653,7 +641,6 @@
             theme = isDark;
             // updateCSS();
             applyChanges();
-            animconfiginit();
         }
         document.querySelectorAll('.user-orange').forEach(function (elm) {
             changeOrange(elm);
@@ -667,7 +654,7 @@
         observer.observe(document.body, { attributes: true, childList: true, subtree: true });
 
         // applyChanges();
-        animate(document);
+        animate();
         // gmc.open();
     });
 
