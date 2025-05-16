@@ -528,17 +528,17 @@
                 gd["-moz-background-clip"] = "text";
                 gd["-moz-text-fill-color"] = "transparent";
                 let newStyle = Object.entries(gd).map(([key, val]) => `${key}: ${val} !important`).join('; ');
-                let wrapper = `body tr.${x} td, body span.${x}, body a.${x}, body .topic .content center a.${x} { ${newStyle} }`;
+                let wrapper = `body tr.${x} td, body span.${x}, body a.${x}, body .topic .content center a.${x}, body p.${x} { ${newStyle} }`;
                 GM_addStyle(wrapper);
             } else if (cfg.type === "static") {
                 // console.log("found static");
                 if (x === "legendary-user-first-letter") {
                     let z = "user-legendary";
                     let y = "::first-letter";
-                    let wrapper = `body tr.${z} td${y}, body span.${z}${y}, body a.${z}${y}, body .topic .content center a.${z}${y} { color: ${cfg.color} !important; }`;
+                    let wrapper = `body tr.${z} td${y}, body span.${z}${y}, body a.${z}${y}, body .topic .content center a.${z}${y}, body p.${z}${y} { color: ${cfg.color} !important; }`;
                     GM_addStyle(wrapper);
                 }
-                let wrapper = `body tr.${x} td, body span.${x}, body a.${x}, body .topic .content center a.${x} { color: ${cfg.color} !important }`;
+                let wrapper = `body tr.${x} td, body span.${x}, body a.${x}, body .topic .content center a.${x}, body p.${x} { color: ${cfg.color} !important }`;
                 // console.log(wrapper);
                 GM_addStyle(wrapper);
             } else if (cfg.type === "hide") {
@@ -546,10 +546,10 @@
                 if (x === "legendary-user-first-letter") {
                     let z = "user-legendary";
                     let y = "::first-letter";
-                    let wrapper = `body tr.${z} td${y}, body span.${z}${y}, body a.${z}${y}, body .topic .content center a.${z}${y} { color: inherit !important; }`;
+                    let wrapper = `body tr.${z} td${y}, body span.${z}${y}, body a.${z}${y}, body .topic .content center a.${z}${y}, body p.${z}${y} { color: inherit !important; }`;
                     GM_addStyle(wrapper);
                 }
-                let wrapper = `body tr.${x} td, body span.${x}, body a.${x}, body .topic .content center a.${x} { color: inherit !important }`;
+                let wrapper = `body tr.${x} td, body span.${x}, body a.${x}, body .topic .content center a.${x}, body p.${x} { color: inherit !important }`;
                 // console.log(wrapper);
                 GM_addStyle(wrapper);
             }
@@ -658,9 +658,15 @@
         // gmc.open();
     });
 
-    /*
     if (document.readyState === 'complete' || document.readyState === 'interactive') {
         setTimeout(() => {
+            let isDark = isDarkMode();
+            if (theme != isDark) {
+                GM_setValue('theme',isDark);
+                theme = isDark;
+                // updateCSS();
+                applyChanges();
+            }
             document.querySelectorAll('.user-orange').forEach(function (elm) {
                 changeOrange(elm);
                 // setTimeout(() => applyClassChanges(elm), 0);
@@ -672,8 +678,9 @@
 
             observer.observe(document.body, { attributes: true, childList: true, subtree: true });
 
-            animateGradient();
-            animateGradient4000();
+            // applyChanges();
+            animate();
+            // gmc.open();
         }, 0);
-    }*/
+    }
 })();
